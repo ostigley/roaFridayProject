@@ -8,8 +8,8 @@ module.exports = function (knex) {
 
   return {
     login: login,
-    saveNewUser: 'NEEDS TO BE WRITTEN',
-    saveNewTweet: 'NEEDS TO BE WRITTEN',
+    saveNewUser: saveNewUser,
+    saveNewTweet: saveNewTweet,
     getAllTweets: db.getAllTweets,
     getTweetsByUserId: db.getTweetsByUserId
   }
@@ -34,9 +34,33 @@ module.exports = function (knex) {
     }
   }
 
-}
+  function saveNewUser (user) {
+    if (!user || !user.name) {
+      throw new Error('Invalid user name')
+    } else if (!user.password) {
+      throw new Error('Invalid password.')
+    }
 
-// {
-//   user: {},
-//   tweets: [{}, {}]
-// }
+    return db.getUserByName(user.name)
+      .then(checkForExistingUser)
+      .then(db.saveNewUser)
+
+    function checkForExistingUser (rows) {
+      if (rows && rows.length > 0) {
+        throw new Error('User name already in use.')
+      }
+      return user
+    }
+  }
+
+  function saveNewTweet (tweet) {
+    if (!tweet || !tweet.tweet) {
+      throw new Error('Invalid or empty tweet.')
+    } else if (!tweet.user_id) {
+      throw new Error('No assigned user/author for tweet.')
+    }
+
+    return db.saveNewTweet(tweet)
+  }
+
+}
