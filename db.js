@@ -2,6 +2,15 @@
 
 function DB (knex) {
 
+  return {
+    getAllUsers: getAllUsers,
+    getUserById: getUserById,
+    getUserByName: getUserByName,
+    getAllTweets: getAllTweets,
+    getTweetById: getTweetById,
+    getTweetsByUserId: getTweetsByUserId
+  }
+
   function getAllUsers () {
     return knex('users')
   }
