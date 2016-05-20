@@ -1,14 +1,16 @@
 'use strict'
 
-function DB (knex) {
+module.exports = function (knex) {
 
   return {
     getAllUsers: getAllUsers,
     getUserById: getUserById,
     getUserByName: getUserByName,
+    saveNewUser: saveNewUser,
     getAllTweets: getAllTweets,
     getTweetById: getTweetById,
-    getTweetsByUserId: getTweetsByUserId
+    getTweetsByUserId: getTweetsByUserId,
+    saveNewTweet: saveNewTweet
   }
 
   function getAllUsers () {
@@ -25,6 +27,11 @@ function DB (knex) {
       where('name', name)
   }
 
+  function saveNewUser (user) {
+    return knex('users')
+      .insert(user)
+  }
+
   function getAllTweets () {
     return knex('tweets')
   }
@@ -39,6 +46,9 @@ function DB (knex) {
       where('user_id', userId)
   }
 
-}
+  function saveNewTweet (tweet) {
+    return knex('tweets')
+      .insert(tweet)
+  }
 
-module.exports = DB
+}
