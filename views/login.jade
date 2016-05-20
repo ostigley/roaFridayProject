@@ -1,17 +1,22 @@
-extends Layout
+extends layout
 
 block body
-  heaader
-    Welcome to counterFitter
+  div.place-holder
+    img(src="http://content.sportslogos.net/logos/54/71/full/2307.gif")
 
+  header
+    h1 Welcome to counterFitter
+  br
   h6 Sign up or Sign in Below.
 
   div.row
     div.eight-columns
 
-      button.btn.new-user-btn
+      button.btn.new-user-btn.
+        New User
 
-      button.btn.login-btn
+      button.btn.login-btn.
+        Login
 
   div.row
     div.eight-columns.forms
