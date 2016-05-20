@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
     knex('users').insert({id: 5, name: 'Olly', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'}),
     knex('users').insert({id: 6, name: 'Nick', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'}),
     knex('users').insert({id: 7, name: 'Lauren', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'}),
-    knex('users').insert({id: 8, name: 'Hape', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'})
+    knex('users').insert({id: 8, name: 'Hape', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'}),
     knex('users').insert({id: 9, name: 'Surya', password: 'funfunfun', avatar: 'http://icons.iconarchive.com/icons/fi3ur/fruitsalad/256/kiwi-icon.png'})
   );
 };
