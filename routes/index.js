@@ -37,11 +37,11 @@ router.post('/user', function(req, res, next) {
     .then(function (user) {
       model.getAllTweets()
         .then(function (tweets) {
-          res.render('USER VIEW NAME HERE', { user: user, tweets: tweets })
+          res.render('index', { user: user, tweets: tweets })
         })
     })
     .catch(function (err) {
-      res.render('LOGIN VIEW NAME HERE', { message: err.message })
+      res.render('login', { message: err.message })
     })
 });
 
