@@ -36,6 +36,8 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+app.listen(3000)
+
 // error handlers
 
 // development error handler
