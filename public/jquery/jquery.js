@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 
   // all tweets page
-var $divs = $('div.tweetbox')
+var $divs = $('div.tweet')
 
   $('.sort-ascending').on('click', function () {
       var numericallyOrderedDivs = $divs.sort(function (a, b) {
@@ -37,6 +37,5 @@ var $divs = $('div.tweetbox')
       });
       $(".tweets").html(numericallyOrderedDivs);
   });
-
 
 })
