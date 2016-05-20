@@ -15,9 +15,9 @@ block body
     div.tweets.two-thirds
       each val in tweets
         div.tweet.twelve-columns
-          h5.tweet-user= val.user_name
+          <!-- h5.tweet-user= val.user_name -->
           p.tweet-text= val.tweet
-          p.tweet-data= val.createdAt
+          p.tweet-data= val.time_stamp
     div.user
       div.avatar.one-third
         img(src="#{user.imageUrl}")
