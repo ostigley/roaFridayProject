@@ -6,26 +6,22 @@ block body
     div.welcome
       Hi #{user.name}, welcome to counterFitter
 
-  div.row
+  div.row.wrapper
     div.eight-columns
-
-      button.btn.sort-ascending.
-        Ascending
-
-      button.btn.sort-descending.
-        Descending
-
-  div.row
-    div.eight-columns.tweets
+        button.btn.sort-ascending.
+          Ascending
+        button.btn.sort-descening.
+          Descending
+    div.tweets.two-thirds
       each val in tweets
         div.tweet.twelve-columns
-          <!-- h4.tweet-text= val.user_name -->
+          <!-- h5.tweet-user= val.user_name -->
           p.tweet-text= val.tweet
           p.tweet-data= val.time_stamp
+    div.user
+      div.avatar.one-third
+        img(src="#{user.imageUrl}")
 
-  div.avatar.two-columns
-    img(src="#{user.imageUrl}")
-
-  div.user-info
-    p User details:
-    p.user-name #{user.name}
+      div.user-info
+        p User details:
+        p.user-name #{user.name}

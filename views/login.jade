@@ -1,15 +1,15 @@
 extends layout
 
 block body
-  div.place-holder
-    img(src="http://content.sportslogos.net/logos/54/71/full/2307.gif")
+  div.logo
+    img(src="./images/counterfitter.png")
 
   header
     h1 Welcome to counterFitter
   br
 
   h4.message #{message}
-  h6 Sign up or Sign in Below.
+  h6 Sign up or sign in below.
 
   div.row
     div.eight-columns
@@ -31,7 +31,7 @@ block body
           input.url(type="text", name="imageUrl", placeholder="Enter image url")
           br
           Label Password
-          input.password(type="text", name="password", placeholder="Enter password")
+          input.password(type="password", name="password", placeholder="Enter password")
           br
           input.submit-button(type="submit", name="submit" value="Add me")
 
@@ -41,7 +41,7 @@ block body
           input.new-username(type="text", name="name", placeholder="Enter username")
           br
           label Password
-          input.password(type="text", name="password", placeholder="Enter password")
+          input.password(type="password", name="password", placeholder="Enter password")
           br
           input.submit-button(type="submit", name="submit" value="Login")
 
