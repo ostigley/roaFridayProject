@@ -1,0 +1,48 @@
+extends layout
+
+block body
+  div.place-holder
+    img(src="http://content.sportslogos.net/logos/54/71/full/2307.gif")
+
+  header
+    h1 Welcome to counterFitter
+  br
+
+  h4.message #{message}
+  h6 Sign up or Sign in Below.
+
+  div.row
+    div.eight-columns
+
+      button.btn.new-user-btn.
+        New User
+
+      button.btn.login-btn.
+        Existing User
+
+  div.row
+    div.eight-columns.forms
+      div.new-user
+        form(name="new-user", action="/new-user", method="post")
+          label Username
+          input.new-username(type="text", name="name", placeholder="Enter username")
+          br
+          label Image URL
+          input.url(type="text", name="imageUrl", placeholder="Enter image url")
+          br
+          Label Password
+          input.password(type="text", name="password", placeholder="Enter password")
+          br
+          input.submit-button(type="button", name="submit" value="Add me")
+
+      div.login
+        form(name="user", action="/find-user", method="post")
+          label Username
+          input.new-username(type="text", name="name", placeholder="Enter username")
+          br
+          label Password
+          input.password(type="text", name="password", placeholder="Enter password")
+          br
+          input.submit-button(type="button", name="submit" value="Login")
+
+
