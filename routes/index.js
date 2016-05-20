@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var model = require('../model/model')
+
+var knexOptions = require('../knexfile')
+var knex = require ('knex')(knexOptions.development)
+var model = require('../model/model')(knex)
 
 /* GET home page. */
 
