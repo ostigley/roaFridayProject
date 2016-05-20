@@ -19,9 +19,9 @@ block body
     div.eight-columns.tweets
       each val in tweets
         div.tweet.twelve-columns
-          h4.tweet-text= val.user_name
+          <!-- h4.tweet-text= val.user_name -->
           p.tweet-text= val.tweet
-          p.tweet-data= val.createdAt
+          p.tweet-data= val.time_stamp
 
   div.avatar.two-columns
     img(src="#{user.imageUrl}")
