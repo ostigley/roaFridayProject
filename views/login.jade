@@ -1,0 +1,31 @@
+extends Layout
+
+block body
+  heaader
+    Welcome to counterFitter
+
+  h6 Sign up or Sign in Below.
+
+  div.row
+    div.eight-columns
+
+      button.btn.new-user-btn
+
+      button.btn.login-btn
+
+  div.row
+    div.eight-columns.forms
+      div.new-user
+        form(name="new-user", action="/new-user", method="post")
+          input.new-username(type="text", name="name")
+          input.url(type="text", name="imageUrl")
+          input.password(type="text", name="password")
+          input.submit-button(type="button", name="submit" value="add me!")
+
+      div.login
+        form(name="user", action="/find-user", method="post")
+          input.new-username(type="text", name="name")
+          input.password(type="text", name="password")
+          input.submit-button(type="button", name="submit" value="add me!")
+
+
