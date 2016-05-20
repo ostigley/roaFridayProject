@@ -1,18 +1,24 @@
 extends layout
-body
-  block body
+block body
 
-    nav
-      a link to homepage
-      a link to mypage
+  nav
+    a link to homepage
+    a link to mypage
+  div.row
+    div.welcome
+      Hi #{user.name}, welcome to counterFitter
 
-    div.row
-      div.eight-columns.tweets
-        div.tweet.twelve-c
-        p hello
+  div.row
+    div.eight-columns.tweets
+    each val in #{tweets}
+      div.tweet.twelve-columns
+        p.user-name val.name
+        p.tweet-text val.tweet
+        p.tweet-data val.createdAt
 
+  div.avatar.two-columns
+    img(src="#{imageUrl}")
 
-
-      div.avatar
-
-      div.user-info
+  div.user-info
+    p User details:
+    p.user-name ${user.name}

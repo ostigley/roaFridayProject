@@ -16,21 +16,31 @@ block body
         New User
 
       button.btn.login-btn.
-        Login
+        Existing User
 
   div.row
     div.eight-columns.forms
       div.new-user
         form(name="new-user", action="/new-user", method="post")
-          input.new-username(type="text", name="name")
-          input.url(type="text", name="imageUrl")
-          input.password(type="text", name="password")
-          input.submit-button(type="button", name="submit" value="add me!")
+          label Username
+          input.new-username(type="text", name="name", placeholder="Enter username")
+          br
+          label Image URL
+          input.url(type="text", name="imageUrl", placeholder="Enter image url")
+          br
+          Label Password
+          input.password(type="text", name="password", placeholder="Enter password")
+          br
+          input.submit-button(type="button", name="submit" value="Add me")
 
       div.login
         form(name="user", action="/find-user", method="post")
-          input.new-username(type="text", name="name")
-          input.password(type="text", name="password")
-          input.submit-button(type="button", name="submit" value="add me!")
+          label Username
+          input.new-username(type="text", name="name", placeholder="Enter username")
+          br
+          label Password
+          input.password(type="text", name="password", placeholder="Enter password")
+          br
+          input.submit-button(type="button", name="submit" value="Login")
 
 
