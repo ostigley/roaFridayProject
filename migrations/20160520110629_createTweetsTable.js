@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
       table.string('tweet')
       table.string('time_stamp')
       table.string('user_id')
+      table.string('user_name')
   })
 
 };
