@@ -7,6 +7,15 @@ block body
       Hi #{user.name}, welcome to counterFitter
 
   div.row
+    div.eight-columns
+
+      button.btn.sort-ascending.
+        Ascending
+
+      button.btn.sort-descending.
+        Descending
+
+  div.row
     div.eight-columns.tweets
       each val in tweets
         div.tweet.twelve-columns
