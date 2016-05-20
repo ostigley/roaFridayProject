@@ -32,8 +32,18 @@ router.get('/user', function(req, res, next) {
 /* POST existing user */
 
 router.post('/user', function(req, res, next) {
-     res.redirect('/');
-    });
+  // expecting req.body.name and req.body.password
+  model.login(req.body.name, req.body.password)
+    .then(function (user) {
+      model.getAllTweets()
+        .then(function (tweets) {
+          res.render('USER VIEW NAME HERE', { user: user, tweets: tweets })
+        })
+    })
+    .catch(function (err) {
+      res.render('LOGIN VIEW NAME HERE', { message: err.message })
+    })
+});
 
 
 module.exports = router;
